@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+<h1>Tic-Tac-Toe</h1>
+
+
+
+<div class="info">
+    <div id="players">
+        <p id="userCont">You: <span id="user"></span></p>
+        <p id="opponentCont">Opponent: <span id="opponent"></span></p>
+    </div>
+
+    <div id="statistics">
+        <p id="valueCont">You are playing as <span id="value"></span></p>
+        <p id="turnCont"><span id="turn">X</span>'s turn</p>
+    </div>
+</div>
+
+<div id="nameCont">
+    <label for="name">Enter your name:</label>
+    <br>
+    <div class="input-container">
+        <input id="name" type="text" placeholder="Enter your name">
+    </div>
+</div>
+
+<button id="find">Start</button>
+
+<img src="loading.gif" alt="loading" id="loading">
+
+<div id="bigCont">
+    <div id="cont">
+        <button id="btn1" class="btn"></button>
+        <button id="btn2" class="btn"></button>
+        <button id="btn3" class="btn"></button>
+        <button id="btn4" class="btn"></button>
+        <button id="btn5" class="btn"></button>
+        <button id="btn6" class="btn"></button>
+        <button id="btn7" class="btn"></button>
+        <button id="btn8" class="btn"></button>
+        <button id="btn9" class="btn"></button>
+
+    </div>
+</div>
+
+<p id="resultCont">Player <span id="result"></span> won!</p>
+<script src="scripts.js"></script>
+</body>
+</html>

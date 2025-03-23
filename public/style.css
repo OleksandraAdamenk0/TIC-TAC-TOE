@@ -1,0 +1,205 @@
+:root {
+    --bg-color: #02050b;
+    --text-color: #dafdfd;
+    --accent-border: #ff4d00;
+    --accent-text: #ff3c00;
+}
+
+[data-value="X"] {
+    --player-color: #f29df8;
+    --shadow-dark-color: rgba(253, 27, 223, 0.2);
+    --shadow-light-color: rgba(245, 27, 253, 0.6);
+}
+
+[data-value="O"] {
+    --player-color: #9df8f6;
+    --shadow-dark-color: rgba(27, 234, 253, 0.2);
+    --shadow-light-color: rgba(27, 253, 245, 0.6);
+
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0;
+
+    background: var(--bg-color);
+    font-family: Cantarell, sans-serif;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #b3e8e7;
+    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 15px #0ff;
+    margin: 24px 0;
+}
+
+p, span, label {
+    color: var(--text-color);
+}
+
+.info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: max(24px, 4vh);
+}
+
+#nameCont {
+    width: 100%;
+}
+
+.input-container {
+    display: flex;
+    width: 100%;
+    max-width: 300px;
+    margin: 4vh 0;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    background: transparent;
+    border: 2px solid #0ff;
+    border-radius: 8px;
+    color: #0ff;
+    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
+    outline: none;
+    transition: 0.3s ease-in-out;
+}
+
+input:focus {
+    border-color: var(--accent-border);
+    box-shadow: inset 0 0 10px #fa9631, 0 0 10px #ff5900, 0 0 20px #ff4d00;
+    color: var(--accent-text);
+    text-shadow: none;
+}
+
+::placeholder {
+    color: rgba(0, 255, 255, 0.5);
+    text-shadow: none;
+}
+
+#find {
+    margin: 8vh 0;
+    font-size: 15px;
+    padding: 0.7em 2.7em;
+    letter-spacing: 0.06em;
+    position: relative;
+    font-family: inherit;
+    border-radius: 0.6em;
+    overflow: hidden;
+    transition: all 0.3s;
+    line-height: 1.4em;
+    border: 2px solid var(--accent-border);
+    background: linear-gradient(to right, rgba(255, 89, 0, 0.1) 1%, transparent 40%,transparent 60% , rgba(255, 89, 0, 0.1) 100%);
+    color: var(--accent-text);
+    box-shadow: inset 0 0 10px #fa9631, 0 0 9px 3px #ff4d00;
+}
+
+#find:hover {
+    color: #ff82e6;
+    box-shadow: inset 0 0 10px rgba(245, 27, 253, 0.6), 0 0 9px 3px rgba(253, 27, 223, 0.2);
+}
+
+#find:before {
+    content: "";
+    position: absolute;
+    left: -4em;
+    width: 4em;
+    height: 100%;
+    top: 0;
+    transition: transform .4s ease-in-out;
+    background: linear-gradient(to right, transparent 1%, rgba(27, 245, 253, 0.1) 40%, rgba(27, 253, 245, 0.1) 60% , transparent 100%);
+}
+
+#find:hover:before {
+    transform: translateX(15em);
+}
+
+#players {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#user {
+    margin-left: 8px;
+    color: var(--player-color);
+    font-weight: bold;
+}
+
+#statistics {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#nameCont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    margin-bottom: 1em;
+}
+
+#bigCont {
+    padding: 24px;
+}
+
+#cont {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
+}
+
+.btn {
+    width: 64px;
+    height: 64px;
+    border-radius: 12%;
+    border: 1px solid white;
+    box-sizing: border-box;
+
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+    background: transparent;
+
+    margin: 0.05em;
+    cursor: pointer;
+}
+
+.my-btn {
+    color: var(--player-color);
+    box-shadow: inset 0 0 10px var(--shadow-light-color), 0 0 9px 3px var(--shadow-dark-color);
+    border: 1px solid var(--player-color);
+}
+
+#loading {
+    width: 32px;
+    height: 32px;
+}
+
+.x-won {
+    background: radial-gradient(circle at center, rgba(255, 0, 251, 0) 0%, rgba(255, 0, 251, 0.5) 100%);
+    box-shadow: inset 0 0 10px rgba(245, 27, 253, 0.6), 0 0 9px 3px rgba(253, 27, 223, 0.2);
+    border: 1px solid #f29df8;
+    color: white;
+}
+
+.o-won {
+    background: radial-gradient(circle at center, rgba(90, 235, 255, 0) 0%, rgba(90, 235, 255, 0.5) 100%);
+    box-shadow: inset 0 0 10px rgba(27, 253, 245, 0.6), 0 0 9px 3px rgba(27, 234, 253, 0.2);
+    border: 1px solid #9df8f6;
+    color: white;
+}
